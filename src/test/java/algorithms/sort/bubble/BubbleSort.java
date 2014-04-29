@@ -20,4 +20,17 @@ public class BubbleSort {
         System.out.println("Sorted array: " + Arrays.toString(array));
     }
 
+    @Test
+    public void simpleBubbleBackward() throws Exception {
+        int[] array = {94, 19, 50, 14, 2, 43, 84};
+
+        System.out.println("Source array: " + Arrays.toString(array));
+        for (int barrier = array.length; barrier > 0; barrier--) {
+            for (int index = 0; index < barrier - 1; index++) {
+                ArrayUtils.backSwap(array, index, index + 1);
+            }
+        }
+        System.out.println("Sorted array: " + Arrays.toString(array));
+    }
+
 }
