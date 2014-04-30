@@ -9,49 +9,49 @@ public class BinarySearch {
     public void binarySearchEven() throws Exception {
         int[] array = {2, 14, 19, 43, 50, 84, 94};
         int index = findFirstIndex(array, 14);
-        Assert.assertEquals(index, 1);
+        Assert.assertEquals(1, index);
     }
 
     @Test
     public void binarySearchOdd() throws Exception {
         int[] array = {2, 14, 19, 43, 50, 84, 94, 100};
         int index = findFirstIndex(array, 14);
-        Assert.assertEquals(index, 1);
+        Assert.assertEquals(1, index);
     }
 
     @Test
     public void binarySearchEvenNotFound() throws Exception {
         int[] array = {2, 14, 19, 43, 50, 84, 94};
         int index = findFirstIndex(array, 13);
-        Assert.assertEquals(index, -1);
+        Assert.assertEquals(-1, index);
     }
 
     @Test
     public void binarySearchEmptyArray() throws Exception {
         int[] array = {};
         int index = findFirstIndex(array, 13);
-        Assert.assertEquals(index, -1);
+        Assert.assertEquals(-1, index);
     }
 
     @Test
     public void binarySearchSingleElement() throws Exception {
         int[] array = {13};
         int index = findFirstIndex(array, 13);
-        Assert.assertEquals(index, 0);
+        Assert.assertEquals(0, index);
     }
 
     @Test
     public void binarySearchSingleElementNotFound() throws Exception {
         int[] array = {10};
         int index = findFirstIndex(array, 13);
-        Assert.assertEquals(index, -1);
+        Assert.assertEquals(-1, index);
     }
 
     @Test
     public void binarySearchOddNotFound() throws Exception {
         int[] array = {2, 14, 19, 43, 50, 84, 94, 100};
         int index = findFirstIndex(array, 13);
-        Assert.assertEquals(index, -1);
+        Assert.assertEquals(-1, index);
     }
 
     @Test
