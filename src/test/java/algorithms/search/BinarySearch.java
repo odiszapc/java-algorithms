@@ -41,6 +41,13 @@ public class BinarySearch {
     }
 
     @Test
+    public void binarySearchSingleElementNotFound() throws Exception {
+        int[] array = {10};
+        int index = findFirstIndex(array, 13);
+        Assert.assertEquals(index, -1);
+    }
+
+    @Test
     public void binarySearchOddNotFound() throws Exception {
         int[] array = {2, 14, 19, 43, 50, 84, 94, 100};
         int index = findFirstIndex(array, 13);
