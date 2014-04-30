@@ -54,6 +54,13 @@ public class BinarySearch {
         Assert.assertEquals(index, -1);
     }
 
+    @Test
+    public void binarySearchDuplicates() throws Exception {
+        int[] array = {13, 13, 13, 13, 13, 13, 13, 13};
+        int index = findFirstIndex(array, 13);
+        Assert.assertEquals(0, index);
+    }
+
     private int findFirstIndex(int[] array, int value) {
         int index = -1;
         if (0 == array.length)
