@@ -19,6 +19,14 @@ public class BinarySearch {
         Assert.assertEquals(index, 1);
     }
 
+    @Test
+    public void binarySearchEvenNotFound() throws Exception {
+        int[] array = {2, 14, 19, 43, 50, 84, 94};
+        int index = findFirstIndex(array, 13);
+        Assert.assertEquals(index, -1);
+    }
+
+
     private int findFirstIndex(int[] array, int value) {
         int index = -1;
         if (0 == array.length)
@@ -28,6 +36,9 @@ public class BinarySearch {
     }
 
     private int findFirstIndex(int[] array, int value, int from, int to) {
+        if (from == to)
+            return -1;
+
         if (array[from] == value)
             return from;
 
