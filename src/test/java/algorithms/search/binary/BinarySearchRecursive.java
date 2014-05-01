@@ -1,9 +1,9 @@
-package algorithms.search;
+package algorithms.search.binary;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-public class BinarySearch {
+public class BinarySearchRecursive {
 
     @Test
     public void binarySearchEven() throws Exception {
@@ -89,10 +89,9 @@ public class BinarySearch {
         Assert.assertEquals(-1, index);
     }
 
-    private int findFirstIndex(int[] array, int value) {
-        int index = -1;
+    protected int findFirstIndex(int[] array, int value) {
         if (0 == array.length)
-            return index;
+            return -1;
 
         return findFirstIndex(array, value, 0, array.length - 1);
     }
@@ -121,8 +120,7 @@ public class BinarySearch {
 
         long started = System.currentTimeMillis();
         for (int i = 0; i < 10000000; i++) {
-            int firstIndex = findFirstIndex(array, 1000);
-            int a = 1;
+            findFirstIndex(array, 1000);
         }
         System.out.println(String.format("Execution time = %s ms", System.currentTimeMillis() - started));
     }
