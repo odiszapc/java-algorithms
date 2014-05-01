@@ -1,8 +1,7 @@
 package algorithms.search;
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 public class DirectSearch {
 
@@ -11,11 +10,7 @@ public class DirectSearch {
         int[] array = {94, 19, 50, 14, 2, 43, 84};
         int element = 2;
         int index = findFirstIndex(array, element);
-
-        if (index >= 0)
-            System.out.println(String.format("Element %s has index %s in %s", element, index, Arrays.toString(array)));
-        else
-            System.out.println("Element not found.");
+        Assert.assertEquals(4, index);
     }
 
     private int findFirstIndex(int[] array, int value) {
