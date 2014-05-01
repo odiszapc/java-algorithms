@@ -1,5 +1,6 @@
 package algorithms.sort.bubble;
 
+import org.junit.Assert;
 import org.junit.Test;
 import utils.ArrayUtils;
 
@@ -17,7 +18,7 @@ public class BubbleSort {
                 ArrayUtils.forwardSwap(array, index, index + 1);
             }
         }
-        System.out.println("Sorted array: " + Arrays.toString(array));
+        Assert.assertArrayEquals(new int[]{2, 14, 19, 43, 50, 84, 94}, array);
     }
 
     @Test
@@ -30,7 +31,7 @@ public class BubbleSort {
                 ArrayUtils.backSwap(array, index, index + 1);
             }
         }
-        System.out.println("Sorted array: " + Arrays.toString(array));
+        Assert.assertArrayEquals(new int[]{94, 84, 50, 43, 19, 14, 2}, array);
     }
 
 }
