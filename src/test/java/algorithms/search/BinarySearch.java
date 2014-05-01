@@ -58,7 +58,7 @@ public class BinarySearch {
     public void binarySearchDuplicates() throws Exception {
         int[] array = {13, 13, 13, 13, 13, 13, 13, 13};
         int index = findFirstIndex(array, 13);
-        Assert.assertEquals(0, index);
+        Assert.assertEquals(3, index);
     }
 
     @Test
@@ -73,6 +73,22 @@ public class BinarySearch {
         Assert.assertEquals(1000, index);
     }
 
+    @Test
+    public void largeDatasetNotFound() throws Exception {
+        int[] array = new int[100000];
+
+        for (int i = 0; i < 100000; i++) {
+            if (1000 == i) {
+                array[i] = i - 1;
+                continue;
+            }
+            array[i] = i;
+        }
+
+        int index = findFirstIndex(array, 1000);
+        Assert.assertEquals(-1, index);
+    }
+
     private int findFirstIndex(int[] array, int value) {
         int index = -1;
         if (0 == array.length)
@@ -82,15 +98,15 @@ public class BinarySearch {
     }
 
     private int findFirstIndex(int[] array, int value, int from, int to) {
-        if (array[from] == value)
-            return from;
-
-        if (from >= to)
+        if (from > to)
             return -1;
 
         int middle = from + (to - from) / 2;
-        if (value >= array[middle])
-            return findFirstIndex(array, value, middle, to);
+        if (array[middle] == value)
+            return middle;
+
+        if (value > array[middle])
+            return findFirstIndex(array, value, middle + 1, to);
         else
             return findFirstIndex(array, value, from, middle - 1);
     }
