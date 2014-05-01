@@ -61,6 +61,18 @@ public class BinarySearch {
         Assert.assertEquals(0, index);
     }
 
+    @Test
+    public void largeDataset() throws Exception {
+        int[] array = new int[100000];
+
+        for (int i = 0; i < 100000; i++) {
+            array[i] = i;
+        }
+
+        int index = findFirstIndex(array, 1000);
+        Assert.assertEquals(1000, index);
+    }
+
     private int findFirstIndex(int[] array, int value) {
         int index = -1;
         if (0 == array.length)
@@ -73,13 +85,29 @@ public class BinarySearch {
         if (array[from] == value)
             return from;
 
-        if (from == to)
+        if (from >= to)
             return -1;
 
-        int middle = (to - from) / 2;
+        int middle = from + (to - from) / 2;
         if (value >= array[middle])
-            return findFirstIndex(array, value, from + middle, from + middle + (to - from - middle) - (to - from) % 2);
+            return findFirstIndex(array, value, middle, to);
         else
-            return findFirstIndex(array, value, from, middle - (1 - (to - from) % 2));
+            return findFirstIndex(array, value, from, middle - 1);
+    }
+
+    @Test
+    public void performance() throws Exception {
+        int[] array = new int[100000];
+
+        for (int i = 0; i < 100000; i++) {
+            array[i] = i;
+        }
+
+        long started = System.currentTimeMillis();
+        for (int i = 0; i < 10000000; i++) {
+            int firstIndex = findFirstIndex(array, 1000);
+            int a = 1;
+        }
+        System.out.println(String.format("Execution time = %s ms", System.currentTimeMillis() - started));
     }
 }
