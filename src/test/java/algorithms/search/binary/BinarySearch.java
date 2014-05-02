@@ -1,5 +1,6 @@
 package algorithms.search.binary;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class BinarySearch extends BinarySearchRecursive {
@@ -23,6 +24,7 @@ public class BinarySearch extends BinarySearchRecursive {
     }
 
     @Test
+    @Ignore
     public void performance() throws Exception {
         int[] array = new int[100000];
 
