@@ -1,4 +1,4 @@
-package algorithms.sort.bubble;
+package algorithms.sort;
 
 import org.junit.Assert;
 import org.junit.Test;
