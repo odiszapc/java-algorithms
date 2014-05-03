@@ -34,6 +34,19 @@ public class BitwiseOperators {
     }
 
     @Test
+    public void testBit() throws Exception {
+        int value = Integer.parseInt("10011101", 2);
+        Assert.assertTrue((value & (1)) != 0); // check 1th bit 10011101
+        Assert.assertTrue((value & (1 << 1)) == 0); // check 2th bit   ^
+        Assert.assertTrue((value & (1 << 2)) != 0); // check 3th bit
+        Assert.assertTrue((value & (1 << 3)) != 0); // check 4th bit
+        Assert.assertTrue((value & (1 << 4)) != 0); // check 5th bit
+        Assert.assertTrue((value & (1 << 5)) == 0); // check 6th bit
+        Assert.assertTrue((value & (1 << 6)) == 0); // check 7th bit
+        Assert.assertTrue((value & (1 << 7)) != 0); // check 8th bit
+    }
+
+    @Test
     public void swap() {
         int a = 111;
         int b = 222;
