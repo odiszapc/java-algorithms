@@ -2,6 +2,7 @@ package algorithms.numbers;
 
 import org.junit.Assert;
 import org.junit.Test;
+import utils.BitUtils;
 
 public class BitwiseOperators {
 
@@ -31,6 +32,13 @@ public class BitwiseOperators {
         Assert.assertEquals(256, 1 << 8);
         Assert.assertEquals(512, 1 << 9);
         Assert.assertEquals(1024, 1 << 10);
+    }
+
+    @Test
+    public void turnOnRightBit() throws Exception {
+        int x = 6;
+        Assert.assertTrue(BitUtils.checkBitIsUnset(x, 0)); // bit is zero
+        Assert.assertTrue(BitUtils.checkBitIsSet(x | x + 1, 0)); // bit is set
     }
 
     @Test
