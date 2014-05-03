@@ -63,6 +63,23 @@ public class BitwiseOperators {
     }
 
     @Test
+    public void getMaskOfAllNonZerosAfterRightMostNonZero() throws Exception {
+        int x = Integer.parseInt("101010111000000000", 2);
+        x = x ^ (x - 1);
+        Assert.assertEquals("1111111111", Integer.toBinaryString(x));
+
+    }
+
+    @Test
+    public void testIntIs2PowNMinus1() throws Exception {
+        // x == 2^n-1
+        int x = 2 * 2 * 2 * 2 * 2 - 1; // 31
+        boolean check = (x & (x + 1)) == 0;
+        Assert.assertTrue(check);
+
+    }
+
+    @Test
     public void testBit() throws Exception {
         int value = Integer.parseInt("10011101", 2);
         Assert.assertTrue((value & (1)) != 0); // check 1th bit 10011101
