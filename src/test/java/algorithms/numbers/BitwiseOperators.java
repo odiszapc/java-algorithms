@@ -51,8 +51,15 @@ public class BitwiseOperators {
     @Test
     public void turnOffBitsAfterRightMostNonZeroSequence() throws Exception {
         int x = Integer.parseInt("101010001111111100", 2);
-        x = ((x | (x-1)) + 1) & x;
+        x = ((x | (x - 1)) + 1) & x;
         Assert.assertEquals("101010000000000000", Integer.toBinaryString(x));
+    }
+
+    @Test
+    public void turnOnBitsAfterRightMostZeroSequence() throws Exception {
+        int x = Integer.parseInt("101010111000000000", 2);
+        x = x | (x - 1);
+        Assert.assertEquals("101010111111111111", Integer.toBinaryString(x));
     }
 
     @Test
