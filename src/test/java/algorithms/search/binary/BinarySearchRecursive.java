@@ -109,19 +109,4 @@ public class BinarySearchRecursive {
         else
             return findFirstIndex(array, value, from, middle - 1);
     }
-
-    @Test
-    public void performance() throws Exception {
-        int[] array = new int[100000];
-
-        for (int i = 0; i < 100000; i++) {
-            array[i] = i;
-        }
-
-        long started = System.currentTimeMillis();
-        for (int i = 0; i < 10000000; i++) {
-            findFirstIndex(array, 1000);
-        }
-        System.out.println(String.format("Execution time = %s ms", System.currentTimeMillis() - started));
-    }
 }
