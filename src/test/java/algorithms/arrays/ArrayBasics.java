@@ -16,4 +16,16 @@ public class ArrayBasics {
 
         Assert.assertEquals(94, max);
     }
+
+    @Test
+    public void computeAverage() throws Exception {
+        double sum = 0.0;
+        int[] array = {94, 19, 50, 14, 2, 43, 84};
+        for (int val : array) {
+            sum += val;
+        }
+
+        double avg = sum / array.length;
+        Assert.assertEquals(43.7142, avg, 0.001);
+    }
 }
