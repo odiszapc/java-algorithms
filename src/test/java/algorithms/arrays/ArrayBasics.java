@@ -28,4 +28,14 @@ public class ArrayBasics {
         double avg = sum / array.length;
         Assert.assertEquals(43.7142, avg, 0.001);
     }
+
+    @Test
+    public void copyArray() throws Exception {
+        int[] src = {94, 19, 50, 14, 2, 43, 84};
+        int[] dst = new int[src.length];
+        for (int i = 0; i < dst.length; i++)
+            dst[i] = src[i];
+
+        Assert.assertArrayEquals(new int[]{94, 19, 50, 14, 2, 43, 84}, dst);
+    }
 }
