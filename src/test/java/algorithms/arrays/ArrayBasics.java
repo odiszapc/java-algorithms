@@ -2,6 +2,7 @@ package algorithms.arrays;
 
 import org.junit.Assert;
 import org.junit.Test;
+import utils.ArrayUtils;
 
 public class ArrayBasics {
 
@@ -37,5 +38,14 @@ public class ArrayBasics {
             dst[i] = src[i];
 
         Assert.assertArrayEquals(new int[]{94, 19, 50, 14, 2, 43, 84}, dst);
+    }
+
+    @Test
+    public void reverseArray() throws Exception {
+        int[] array = {94, 19, 50, 14, 2, 43, 84};
+        for (int i = 0; i < array.length / 2; i++)
+            ArrayUtils.swap(array, i, array.length - 1 - i);
+
+        Assert.assertArrayEquals(new int[]{84, 43, 2, 14, 50, 19, 94}, array);
     }
 }
