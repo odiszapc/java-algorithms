@@ -14,7 +14,7 @@ public class ParenthesesBalancing {
     private static final String CLOSE_STR = String.valueOf(CLOSE);
 
     @Test
-    public void balance() throws Exception {
+    public void balance() {
         Assert.assertTrue(balance("(if (zero? x) max (/ 1 x))"));
         Assert.assertTrue(balance("I told him (that it's not (yet) done).\n(But he wasn't listening)"));
         Assert.assertTrue(balance("()()()"));
@@ -36,6 +36,7 @@ public class ParenthesesBalancing {
 
         if (text[pointer] == OPEN)
             stack.push(OPEN_STR);
+
         else if (text[pointer] == CLOSE) {
             if (!stack.empty()) {
                 if (stack.peek().equals(OPEN_STR))
