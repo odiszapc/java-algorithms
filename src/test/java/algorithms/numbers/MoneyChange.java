@@ -46,6 +46,5 @@ public class MoneyChange {
             return 1 + countChange(money, coins, pointer + 1);
 
         return countChange(money, coins, pointer + 1);
-
     }
 }
