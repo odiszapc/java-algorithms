@@ -16,7 +16,6 @@ public class Factorial {
         Assert.assertEquals(24, factorialTailRecursive(4));
     }
 
-
     private int factorial(int x) {
         if (0 == x)
             return 1;
